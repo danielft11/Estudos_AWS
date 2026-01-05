@@ -17,6 +17,8 @@ Um fluxo de deploy onde:
 
 - o build da aplicação é gerado localmente, enviado ao S3 e consumido pela instância EC2 via IAM Role.
 
+⚠️ **IMPORTANTE**: Este laboratório não representa a arquitetura ideal para publicar um site estático real em produção. Em um cenário profissional, o recomendado seria hospedar o conteúdo diretamente no Amazon S3, expor o site por meio do Amazon CloudFront como CDN, utilizando HTTPS, cache distribuído globalmente, melhor performance, menor custo operacional e maior segurança, possivelmente com AWS WAF e controle de acesso via Origin Access Control (OAC). A abordagem adotada neste laboratório (EC2 + Nginx consumindo arquivos do S3) foi intencionalmente escolhida para fins didáticos, com o objetivo de exercitar na prática conceitos fundamentais cobrados na certificação AWS Certified Developer – Associate (DVA-C02), como IAM (roles e policies), EC2, permissões de acesso a serviços, deploy manual, e entendimento do fluxo entre serviços, mesmo não sendo a solução mais eficiente para produção.
+
 #### 📦 Etapas:
 
 **Passo 1**: Criar a política chamada *S3ReadStaticSitePolicy*. Veja o conteúdo da política no arquivo **policy.txt**.
